@@ -1,0 +1,16 @@
+<html>
+<head>
+	{% load staticfiles %}
+		<link <link rel="stylesheet" type="text/css" href="{% static 'zadatak/style.css' %}" />
+</head>
+<body id="process-page">
+	<h2>Words were counted from these rss feeds</h2>
+	<div id="process-wrapper">
+		<ul>
+			{% for x in data %}
+				<li><a href="{% url 'zadatak:details' x.id %}">{{ x.url_data }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+</body>
+</html>

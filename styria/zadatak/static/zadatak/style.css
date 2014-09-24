@@ -1,0 +1,168 @@
+@font-face {
+    font-family: Sinkin Sans;
+    src: url(SinkinSans-400Regular.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    line-height: 100%;
+}
+
+html, body {width: 100%; height: 100%; font-family: Sinkin Sans, Verdana, sans-serif;}
+
+/*index-page*/
+#index-page {background-color: rgb(32,32,32);}
+#new-url-wrapper {
+    width: 100%;
+    background-color: rgb(102,193,102);
+    overflow: auto;
+}
+#new-url-wrapper h2 {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    width: 420px;
+    padding: 26px 0;
+    display: inline-block;
+    float: left;
+}
+#new-url-wrapper form input {
+    display: inline-block;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    margin: 24px 0;
+    padding: 0 12px;
+    width: 530px;
+}
+#new-url-wrapper form input.button {
+    width: 100px;
+    margin-left: 25px;
+    cursor: pointer;
+    background-color: rgb(32,32,32);
+    color: rgb(102,193,102);
+    font-weight: bold;
+}
+
+#url-list-wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+#url-list-wrapper h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(102,193,102);
+    margin: 50px 0;
+}
+#url-list-wrapper form ul li {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    border-right: 1px solid rgb(102,193,102);
+    border-left: 1px solid rgb(102,193,102);
+}
+#url-list-wrapper form ul li:nth-of-type(odd) {
+    border-top: 1px solid rgb(102,193,102);
+    border-bottom: 1px solid rgb(102,193,102);
+}
+#url-list-wrapper form ul li label {
+    display: block;
+    width: 890px;
+    float: left;
+    text-align: right;
+    padding: 12px 20px 12px 0;
+    border-right: 1px solid rgb(102,193,102);
+    font-size: 16px;
+    color: rgb(223,223,223);
+}
+#url-list-wrapper form ul li input {
+    float: left;
+    height: 16px;
+    width: 16px;
+    margin: 12px 12px 0 16px;
+}
+#url-list-wrapper form input.button {
+    height: 32px;
+    width: 100px;
+    cursor: pointer;
+    background-color: rgb(102,193,102);
+    color: rgb(32,32,32);
+    font-weight: bold;
+    display: block;
+    margin: 25px auto;
+}
+
+/*details-page*/
+#details-page {background-color: rgb(32,32,32);}
+#details-page h2 {
+    width: 100%;
+    background-color: rgb(102,193,102);
+    color: rgb(32,32,32);
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 25px 0;
+}
+#details-page h2 span {text-transform: lowercase; margin-left: 25px; font-size: 20px;}
+#details-wrapper {
+    width: 960px;
+    margin: 0 auto;
+    overflow: auto;
+}
+#details-wrapper ul {margin: 25px 0;}
+#details-wrapper ul li {
+    width: 320px;
+    height: 50px;
+    line-height: 50px;
+    color: rgb(223,223,223);
+    float: left;
+    text-align: center;
+    font-size: 16px;
+}
+#details-wrapper ul li label {margin-right: 10px;}
+#details-wrapper ul li span {margin-left: 10px;}
+.pagination {width: 960px; margin: 0 auto; text-align: center; margin-top: 25px;}
+.pagination .current {color: rgb(223,223,223); font-weight: bold;}
+.pagination a {color: rgb(102,193,102); font-weight: bold; margin: 0 20px;}
+
+/*process page*/
+#process-page {background-color: rgb(32,32,32);}
+#process-page h2 {
+    width: 100%;
+    background-color: rgb(102,193,102);
+    color: rgb(32,32,32);
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 25px 0;
+}
+#process-wrapper {width: 960px; min-height: 100%; margin: 0 auto; overflow: auto;}
+#process-wrapper ul {margin: 50px 0;}
+#process-wrapper ul li a {
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    color: rgb(102,193,102);
+    text-align: center;
+    margin: 5px 0;
+}
+#process-wrapper ul li a:hover {
+    background-color: rgb(102,193,102);
+    color: rgb(32,32,32);
+}
+
+a#back {color: rgb(102,193,102);}

@@ -1,0 +1,30 @@
+<html>
+<head>
+	{% load staticfiles %}
+		<link <link rel="stylesheet" type="text/css" href="{% static 'zadatak/style.css' %}" />
+</head>
+<body id="details-page">
+	<h2>Rezultati za: <span>{{ value }}</span></h2>
+	<a id="back" href="{% url 'zadatak:index' %}">back to index</a>
+	<div id="details-wrapper">
+		<ul>
+		{% for x in data %}
+			<li><label>{{ x.word }}</label> : <span>{{ x.total }}</span></li>
+		{% endfor %}
+		</ul>
+	</div>
+	<div class="pagination">
+		<span class="step-links">
+			{% if data.has_previous %}
+				<a href="?page={{ data.previous_page_number }}">previous</a>
+			{% endif %}
+			<span class="current">
+				page {{ data.number }} of {{ data.paginator.num_pages }}.
+			</span>
+			{% if data.has_next %}
+				<a href="?page={{ data.next_page_number }}">next</a>
+			{% endif %}
+		</span>
+	</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+<head>
+	{% load staticfiles %}
+		<link <link rel="stylesheet" type="text/css" href="{% static 'zadatak/style.css' %}" />
+</head>
+<body id="index-page">
+	<div id="new-url-wrapper">
+		<h2>Add new rss feed</h2>
+		<form id="new-url" name="new-url" action="{% url 'zadatak:url_save' %}" method="POST">
+			{% csrf_token %}
+			<input type="text" id="url_data" name="url_data" value="" placeholder="Please insert RSS feed url..." />
+			<input id="button1" class="button" name="buton1" type="submit" value="Submit" />
+		</form>
+	</div>
+	<div id="url-list-wrapper">
+		<h2>List of all rss feeds</h2>
+		<form id="url-list" name="url-list" action="{% url 'zadatak:url_process' %}" method="POST">
+			{% csrf_token %}
+			<ul>
+				{% for data in url_list %}
+				<li>
+					<label>{{ data }}</label>
+					<input id="cb-{{ data.id }}" class="checkbox"  name="cb" type="checkbox" value="{{ data.id }}" 
+					{% if data.status == True %}
+						checked
+					{% endif %}
+					/>
+				</li>
+				{% endfor %}
+			</ul>
+			<input id="button2" class="button" type="submit" value="Send" />
+		</form>
+	</div>
+</body>
+</html>
