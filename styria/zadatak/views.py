@@ -4,6 +4,7 @@ from zadatak.models import Url, Words, WordCount
 from django.template import RequestContext
 from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db import transaction
 
 import feedparser
 import collections
@@ -66,12 +67,14 @@ def singleWord(all_words, url_id):
 	# unique_word je da mogu referencirati dictionary word_count
 	unique_word = list(set(helper))
 	#sad to treba spremiti u bazu
-	# ovaj dio je izuzetno spor
-	for x in word_count:
-		data = Words(url_id=url_id, word=x)
-		data.save()
-		data = WordCount(url_id=url_id, word_id=x, total=word_count.get(x))
-		data.save()
+	# ovaj dio je izuzetno spor, ali kad se ukljuci ovo
+	# transaction.atomic() onda se ubrza
+	with transaction.atomic():
+                for x in word_count:
+                        data = Words(url_id=url_id, word=x)
+                        data.save()
+                        data = WordCount(url_id=url_id, word_id=x, total=word_count.get(x))
+                        data.save()
 	return ()
 
 def allWords(url):
